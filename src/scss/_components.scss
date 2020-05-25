@@ -1,0 +1,540 @@
+///////////////////////////////
+// Loader
+/////////////////////
+.loader {
+  margin: 5rem auto;
+  text-align: center;
+}
+.loader svg {
+  height: 5.5rem;
+  width: 5.5rem;
+  fill: $color-secondary-light;
+  transform-origin: 44% 50%;
+  animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+///////////////////////////////
+// Buttons
+/////////////////////
+.btn,
+.btn-small,
+.btn-small:link,
+.btn-small:visited {
+  background-image: linear-gradient(to right bottom, $color-primary, $color-secondary);
+  border-radius: 10rem;
+  border: none;
+  text-transform: uppercase;
+  color: $color-white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+.btn:hover,
+.btn-small:hover {
+  transform: scale(1.05);
+}
+.btn:focus,
+.btn-small:focus {
+  outline: none;
+}
+.btn > *:first-child,
+.btn-small > *:first-child {
+  margin-right: 1rem;
+}
+
+.btn {
+  padding: 1.3rem 3rem;
+  font-size: 1.4rem;
+}
+.btn svg {
+  height: 2.25rem;
+  width: 2.25rem;
+  fill: currentColor;
+}
+
+.btn-small,
+.btn-small:link,
+.btn-small:visited {
+  font-size: 1.3rem;
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+}
+.btn-small svg,
+.btn-small:link svg,
+.btn-small:visited svg {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: currentColor;
+}
+
+.btn-inline {
+  color: $color-secondary-light;
+  font-size: 1.2rem;
+  border: none;
+  background-color: $color-grey-light-1;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+
+  & svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    fill: currentColor;
+    margin: 0 0.2rem;
+  }
+  & span {
+    margin: 0 0.4rem;
+  }
+  &:hover {
+    color: $color-secondary;
+    background-color: $color-grey-light-2;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-tiny {
+  height: 1.75rem;
+  width: 1.75rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  & svg {
+    height: 100%;
+    width: 100%;
+    fill: $color-secondary-light;
+    transition: all 0.3s;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover svg {
+    fill: $color-secondary;
+    transform: translateY(-1px);
+  }
+  &:active svg {
+    fill: $color-secondary;
+    transform: translateY(0);
+  }
+  &:not(:last-child) {
+    margin-right: 0.3rem;
+  }
+}
+///////////////////////////////
+// Search
+/////////////////////
+.search {
+  background-color: $color-white;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  transition: all 0.3s;
+
+  &:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 0.7rem 3rem rgba(101, 90, 86, 0.08);
+  }
+  &__field {
+    border: none;
+    background: none;
+    font-family: inherit;
+    color: inherit;
+    font-size: 1.7rem;
+    width: 30rem;
+  }
+  &__field:focus {
+    outline: none;
+  }
+  &__field::placeholder {
+    color: $color-grey-light-3;
+  }
+}
+///////////////////////////////
+// Likes
+/////////////////////
+.likes {
+  position: relative;
+  align-self: stretch;
+  padding: 0 !important;
+
+  &__field {
+    cursor: pointer;
+    padding: 0 4rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: all 0.3s;
+  }
+  &__field:hover {
+    background-color: $color-grey-light-2;
+  }
+  &__panel:hover,
+  &__field:hover + &__panel {
+    visibility: visible;
+    opacity: 1;
+  }
+  &__icon {
+    fill: $color-secondary-light;
+    height: 3.75rem;
+    width: 3.75rem;
+  }
+  &__panel {
+    position: absolute;
+    right: 0;
+    top: 10rem;
+    z-index: 10;
+    padding: 2rem 0;
+    width: 34rem;
+    background-color: $color-white;
+    box-shadow: 0 0.8rem 5rem 2rem rgba(101, 90, 86, 0.1);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s 0.2s;
+  }
+}
+///////////////////////////////
+// Results
+/////////////////////
+.results,
+.likes {
+  padding: 3rem 0;
+}
+.results__list,
+.likes__list {
+  list-style: none;
+}
+.results__link:link,
+.results__link:visited,
+.likes__link:link,
+.likes__link:visited {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  transition: all 0.3s;
+  border-right: 1px solid $color-white;
+  text-decoration: none;
+}
+.results__link:hover,
+.likes__link:hover {
+  background-color: $color-grey-light-1;
+  transform: translateY(-2px);
+}
+.results__link--active,
+.likes__link--active {
+  background-color: $color-grey-light-1;
+}
+.results__fig,
+.likes__fig {
+  flex: 0 0 5.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  height: 5.5rem;
+  margin-right: 2rem;
+  position: relative;
+  backface-visibility: hidden;
+}
+.results__fig::before,
+.likes__fig::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right bottom, $color-primary, $color-secondary);
+  opacity: 0.4;
+}
+.results__fig img,
+.likes__fig img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s;
+}
+.results__name,
+.likes__name {
+  font-size: 1.3rem;
+  color: $color-secondary-light;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.results__author,
+.likes__author {
+  font-size: 1.1rem;
+  color: $font-secondary-color;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.results__pages,
+.likes__pages {
+  margin-top: 3rem;
+  padding: 0 3rem;
+}
+.results__pages::after,
+.likes__pages::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.results__btn--prev,
+.likes__btn--prev {
+  float: left;
+  flex-direction: row-reverse;
+}
+.results__btn--next,
+.likes__btn--next {
+  float: right;
+}
+///////////////////////////////
+// Recipe
+/////////////////////
+.recipe {
+  background-color: $color-grey-light-1;
+  border-top: 1px solid $color-white;
+  &__fig {
+    height: 30rem;
+    position: relative;
+    transform: scale(1.04) translateY(-1px);
+    transform-origin: top;
+  }
+  &__fig::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right bottom, $color-primary, $color-secondary);
+    opacity: 0.6;
+  }
+  &__img {
+    width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__title {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 20%) skewY(-6deg);
+    color: $color-white;
+    font-weight: 700;
+    font-size: 2.75rem;
+    text-transform: uppercase;
+    width: 70%;
+    line-height: 1.95;
+    text-align: center;
+  }
+  &__title span {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: 1.3rem 2rem;
+    background-image: linear-gradient(to right bottom, $color-primary, $color-secondary);
+  }
+  &__details {
+    display: flex;
+    align-items: center;
+    padding: 8rem 3rem 3rem 3rem;
+  }
+  &__info {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+  &__info:not(:last-child) {
+    margin-right: 4rem;
+  }
+  &__info-icon {
+    height: 2rem;
+    width: 2rem;
+    fill: $color-secondary-light;
+    margin-right: 1rem;
+  }
+  &__info-data {
+    margin-right: 0.4rem;
+    font-weight: 600;
+  }
+  &__info-buttons {
+    display: flex;
+    margin-left: 1.5rem;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 0.4s;
+  }
+  &:hover &__info-buttons {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &__love {
+    background-image: linear-gradient(to right bottom, $color-primary, $color-secondary);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    height: 4.5rem;
+    width: 4.5rem;
+    margin-left: auto;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__love:hover {
+    transform: scale(1.07);
+  }
+  &__love:focus {
+    outline: none;
+  }
+  &__love svg {
+    height: 2.75rem;
+    width: 2.75rem;
+    fill: $color-white;
+  }
+  &__ingredients {
+    padding: 4rem 5rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    background-color: $color-grey-light-2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__ingredient-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2.5rem;
+    list-style: none;
+    margin-bottom: 3rem;
+  }
+  &__item {
+    display: flex;
+  }
+  &__icon {
+    height: 1.8rem;
+    width: 1.8rem;
+    fill: $color-secondary-light;
+    border: 1px solid $color-secondary-light;
+    border-radius: 50%;
+    padding: 2px;
+    margin-right: 1rem;
+    flex: 0 0 auto;
+    margin-top: 0.1rem;
+  }
+  &__count {
+    margin-right: 0.5rem;
+    flex: 0 0 auto;
+  }
+  &__directions {
+    padding: 4rem;
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__directions-text {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 90%;
+    margin-bottom: 3rem;
+    color: $font-secondary-color;
+  }
+  &__by {
+    font-weight: 700;
+  }
+}
+///////////////////////////////
+// Shopping
+/////////////////////
+.shopping {
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+
+  &__list {
+    list-style: none;
+    max-height: 77rem;
+    overflow: scroll;
+  }
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.3rem 0;
+    border-bottom: 1px solid $color-grey-light-2;
+    position: relative;
+  }
+  &__count {
+    flex: 0 0 7.5rem;
+    padding: 0.4rem 0.5rem;
+    border: 1px solid $color-grey-light-2;
+    border-radius: 3px;
+    margin-right: 2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__count input {
+    color: inherit;
+    font-family: inherit;
+    font-size: 1.2rem;
+    text-align: center;
+    border: none;
+    width: 3.7rem;
+    border-radius: 3px;
+  }
+  &__count input:focus {
+    outline: none;
+    background-color: $color-grey-light-2;
+  }
+  &__count p {
+    font-size: 1.2rem;
+  }
+  &__description {
+    flex: 1;
+    font-size: 1.3rem;
+    margin-top: 0.4rem;
+    margin-right: 1.5rem;
+  }
+  &__delete {
+    margin-top: 0.5rem;
+    position: absolute;
+    right: 0;
+    background-image: linear-gradient(
+      to right,
+      transparent 0%,
+      $color-white 40%,
+      $color-white 100%
+    );
+    width: 3.75rem;
+    padding-left: 2rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  &__item:hover &__delete {
+    opacity: 1;
+    visibility: visible;
+  }
+}

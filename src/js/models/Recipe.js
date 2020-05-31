@@ -12,7 +12,7 @@ export default class Recipe {
       this.title = res.data.recipe.title;
       this.author = res.data.recipe.publisher;
       this.image = res.data.recipe.image_url;
-      this.url = res.data.recipe.url;
+      this.url = res.data.recipe.source_url;
       this.ingredients = res.data.recipe.ingredients;
       console.log(res);
     } catch (err) {

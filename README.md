@@ -1,11 +1,11 @@
 # Forkify App
 
 
-> A recipe searching app among thousand of recipes taken from Food2Fork API
+> A JavaScript search recipe application taken from Food2Fork API. All code is built with Vanilla JS ES6 .
 
-![Example screenshot](./src/img/readme-screenshot.png)
+![Example screenshot](./src/img/readme/readme-preview.png)
 
-![node-current](https://img.shields.io/badge/made%20with-javascript-f3db1b.svg?style=for-the-badge&labelColor=080804) &nbsp;![node-current](https://img.shields.io/badge/node%20version-13.14.0-8ccb4c.svg?style=for-the-badge&labelColor=080804) &nbsp; ![node-current](https://img.shields.io/badge/uses-scss-cb649b.svg?style=for-the-badge&labelColor=080804) &nbsp;![node-current](https://img.shields.io/badge/markup-html5-eb6434.svg?style=for-the-badge&labelColor=080804) &nbsp;![node-current](https://img.shields.io/badge/bundled%20with-webpack%204-1d78c0.svg?style=for-the-badge&labelColor=080804)
+![node-current](https://img.shields.io/badge/made%20with-javascript-f3db1b.svg?style=for-the-badge&labelColor=080804) &nbsp;![node-current](https://img.shields.io/badge/node%20version-13.14.0-8ccb4c.svg?style=for-the-badge&labelColor=080804) &nbsp;![node-current](https://img.shields.io/badge/uses-scss-cb649b.svg?style=for-the-badge&labelColor=080804) &nbsp;![node-current](https://img.shields.io/badge/markup-html5-eb6434.svg?style=for-the-badge&labelColor=080804) &nbsp;![node-current](https://img.shields.io/badge/bundled%20with-webpack%204-1d78c0.svg?style=for-the-badge&labelColor=080804)
 
 ## Table of contents
 
@@ -13,6 +13,7 @@
   - [Table of contents](#table-of-contents)
   - [General info](#general-info)
   - [Technologies](#technologies)
+  - [Forkify API Documentation](#forkify-api-documentation)
   - [Installation and Usage](#installation-and-usage)
     - [Dev Mode](#dev-mode)
     - [Prod Mode](#prod-mode)
@@ -23,14 +24,19 @@
 
 ## General info
 
-This simple application helps to keep track of monthly expenses.
-In this project the main purpose is to put into practice javascript skills.
+The Forkify App allows users to search for recipes using the Food2Fork API. Users can view the recipe along with the cook time and also increase or decrease the amount of servings they need. At this point the user can favorite the recipe or even add it to their shopping list if they want to shop for more than one recipe. Favourite meals are stored in local storage so no database was required for this application.
 
 ## Technologies
 
 - JavaScript
 - HTML 5
 - SCSS
+
+## Forkify API Documentation
+
+This is the test API dedicated to the Forkify app
+
+- http://forkify-api.herokuapp.com/
 
 ## Installation and Usage
 

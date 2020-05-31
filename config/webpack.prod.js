@@ -13,7 +13,7 @@ module.exports = merge(common, {
   output: {
     filename: 'js/[name].[contentHash].bundle.js',
     path: path.resolve(__dirname, '../dist'),
-    publicPath: '/' // To publish in Github Pages you will want to change it to repo folder name /budgetify-app/ in this case.
+    publicPath: '/' // To publish in Github Pages you will want to change it to repo folder name /forkify-app/ in this case.
   },
   optimization: {
     minimizer: [new OptimizeCssAssetsPlugin({}), new TerserPlugin({})]
@@ -22,12 +22,7 @@ module.exports = merge(common, {
     rules: [
       {
         test: [/.css$|.scss$/],
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader'
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
         sideEffects: true // Cue up for tree shake
       }
     ]

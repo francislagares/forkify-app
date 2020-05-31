@@ -9,18 +9,19 @@ const formatCount = (count) => {
   if (count) {
     // count = 2.5 --> 2 1/2
     // count = 0.5 --> 1/2
-    const [int, dec] = count
+    const newCount = Math.round(count * 10000) / 10000;
+    const [int, dec] = newCount
       .toString()
       .split('.')
       .map((el) => parseInt(el, 10));
 
-    if (!dec) return count;
+    if (!dec) return newCount;
 
-    if (count === 0) {
-      const fr = new Fraction(count);
+    if (newCount === 0) {
+      const fr = new Fraction(newCount);
       return `${fr.numerator}/${fr.denominator}`;
     } else {
-      const fr = new Fraction(count - int);
+      const fr = new Fraction(newCount - int);
       return `${int} ${fr.numerator}/${fr.denominator}`;
     }
   }
@@ -107,11 +108,7 @@ export const renderRecipe = (recipe, isLiked) => {
         <span class="recipe__by">${recipe.author}</span>. Please check out directions at their
         website.
       </p>
-      <a
-        class="btn-small recipe__btn"
-        href="${recipe.url}"
-        target="_blank"
-      >
+      <a class="btn-small recipe__btn" href="${recipe.url}" target="_blank">
         <span>Directions</span>
         <svg class="search__icon">
           <use href="img/sprite.svg#icon-triangle-right"></use>

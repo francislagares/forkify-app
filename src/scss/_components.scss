@@ -476,7 +476,7 @@
   &__list {
     list-style: none;
     max-height: 77rem;
-    overflow: scroll;
+    overflow-x: hidden;
   }
   &__item {
     display: flex;
